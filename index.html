@@ -14,5 +14,45 @@
     <input type="number" name="svar" id="svar" />
 
     <button id="calc">Aprēķināt ĶML</button>
+    <p id="output"></p>
+
+    <script>
+      const Augstums = document.getElementById("augst");
+      const Svars = document.getElementById("svar");
+
+      const Out = document.getElementById("output");
+
+      const Btn = document.getElementById("calc");
+      Btn.addEventListener("click", function () {
+        let aug = parseFloat(Augstums.value);
+        let svr = parseFloat(Svars.value);
+
+        let aug2 = aug * aug;
+        let rez = svr / aug2;
+
+        if (rez.toFixed(2) < 18.5) {
+          Out.textContent =
+            "Jūsu ĶMI ir: " +
+            rez.toFixed(2) +
+            ", jums ir nepietiekama ķermeņa masa.";
+          return;
+        }
+        if ((rez.toFixed(2) >= 18.5, rez.toFixed(2) <= 24.99)) {
+          Out.textContent =
+            "Jūsu ĶMI ir: " + rez.toFixed(2) + ", jums ir normāla ķermeņa masa";
+          return;
+        }
+        if ((rez.toFixed(2) >= 25.5, rez.toFixed(2) <= 29.99)) {
+          Out.textContent =
+            "Jūsu ĶMI ir: " + rez.toFixed(2) + ", jums ir lieka ķermeņa masa";
+          return;
+        }
+        if (rez.toFixed(2) >= 30) {
+          Out.textContent = "Jūsu ĶMI ir: " + rez.toFixed(2) + ", aptaukošanās";
+          return;
+        }
+        
+      });
+    </script>
   </body>
 </html>
