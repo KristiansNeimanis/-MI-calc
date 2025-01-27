@@ -35,23 +35,26 @@
             "Jūsu ĶMI ir: " +
             rez.toFixed(2) +
             ", jums ir nepietiekama ķermeņa masa.";
+          localStorage.setItem(Date.now(), Out.textContent);
           return;
         }
         if ((rez.toFixed(2) >= 18.5, rez.toFixed(2) <= 24.99)) {
           Out.textContent =
             "Jūsu ĶMI ir: " + rez.toFixed(2) + ", jums ir normāla ķermeņa masa";
+          localStorage.setItem(Date.now(), Out.textContent);
           return;
         }
         if ((rez.toFixed(2) >= 25.5, rez.toFixed(2) <= 29.99)) {
           Out.textContent =
             "Jūsu ĶMI ir: " + rez.toFixed(2) + ", jums ir lieka ķermeņa masa";
+          localStorage.setItem(Date.now(), Out.textContent);
           return;
         }
         if (rez.toFixed(2) >= 30) {
           Out.textContent = "Jūsu ĶMI ir: " + rez.toFixed(2) + ", aptaukošanās";
+          localStorage.setItem(Date.now(), Out.textContent);
           return;
         }
-        
       });
     </script>
   </body>
